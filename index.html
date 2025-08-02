@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es" data-lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Turismo Inclusivo - Paquetes Especiales</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Poppins:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-theme="light">
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Turismo Inclusivo</div>
+        <div class="menu">
+          <a href="#about" data-i18n="nav_about">Sobre</a>
+          <a href="#packages" data-i18n="nav_packages">Paquetes</a>
+          <a href="#destinations" data-i18n="nav_destinations">Destinos</a>
+          <a href="#booking" data-i18n="nav_booking">Reservar</a>
+          <a href="#contact" data-i18n="nav_contact">Contacto</a>
+          <a href="#reviews" data-i18n="nav_reviews">Reseñas</a>
+        </div>
+        <div class="toggles">
+          <button id="darkToggle" aria-label="Toggle Dark Mode">🌙</button>
+          <select id="langSelect" aria-label="Selector de idioma">
+            <option value="es">ES</option>
+            <option value="en">EN</option>
+          </select>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- SOBRE LA EMPRESA -->
+    <section id="about">
+      <div class="container">
+        <h2 data-i18n="about_title">Sobre Nosotros</h2>
+        <div class="grid grid-2">
+          <div>
+            <p data-i18n="about_text1">
+              Somos líderes en turismo inclusivo: diseñamos experiencias accesibles para personas con cualquier condición.
+            </p>
+            <p data-i18n="about_text2">
+              Nuestro compromiso es garantizar comodidad, seguridad y diversión para todos, sin excepciones.
+            </p>
+            <ul>
+              <li data-i18n="about_fact1">Vehículos adaptados y guías especializados.</li>
+              <li data-i18n="about_fact2">Alojamiento con accesibilidad universal.</li>
+              <li data-i18n="about_fact3">Actividades sensoriales y culturales inclusivas.</li>
+            </ul>
+          </div>
+          <img src="img/Discapacidad.jpg" alt="Imagen de la bodega" />
+        </div>
+      </div>
+    </section>
+
+    <!-- PAQUETES -->
+    <section id="packages">
+      <div class="container">
+        <h2 data-i18n="packages_title">Nuestros Paquetes</h2>
+        <div class="grid grid-3" id="packagesGrid"></div>
+      </div>
+    </section>
+
+    <!-- DESTINOS -->
+    <section id="destinations">
+      <div class="container">
+        <h2 data-i18n="destinations_title">Destinos Destacados</h2>
+        <div class="grid grid-3" id="destinationsGrid"></div>
+      </div>
+    </section>
+
+    <!-- RESERVAR -->
+    <section id="booking">
+      <div class="container">
+        <h2 data-i18n="booking_title">Reservar Paquete</h2>
+        <form id="bookingForm" aria-label="Formulario de reserva">
+          <label for="pkgSelect" data-i18n="booking_pkg_label">Selecciona un paquete:</label>
+          <select id="pkgSelect" required></select>
+
+          <label for="date" data-i18n="booking_date_label">Fecha de viaje:</label>
+          <input type="date" id="date" required />
+
+          <label for="guests" data-i18n="booking_guests_label">Número de personas:</label>
+          <input type="number" id="guests" min="1" value="1" required />
+
+          <button type="submit" class="btn" data-i18n="booking_btn">Confirmar Reserva</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contact">
+      <div class="container">
+        <h2 data-i18n="contact_title">Contacto</h2>
+        <form id="contactForm" aria-label="Formulario de contacto" novalidate>
+          <input type="text" id="name" placeholder="Nombre" required />
+          <input type="email" id="email" placeholder="Email" required />
+          <textarea id="message" rows="4" placeholder="Mensaje" required></textarea>
+          <button type="submit" class="btn" data-i18n="contact_btn">Enviar</button>
+        </form>
+        <p data-i18n="contact_info">
+          Tel: +54 2622 123456 | Email: info@turismoinclusivo.com
+        </p>
+      </div>
+    </section>
+
+    <!-- RESEÑAS -->
+    <section id="reviews">
+      <div class="container">
+        <h2 data-i18n="reviews_title">Reseñas</h2>
+        <div class="review">
+          <div class="stars">★★★★★</div>
+          <p data-i18n="rev1">Excelente atención y accesibilidad total.</p>
+        </div>
+        <div class="review">
+          <div class="stars">★★★★☆</div>
+          <p data-i18n="rev2">Experiencia inolvidable, guías muy profesionales.</p>
+        </div>
+        <div class="review">
+          <div class="stars">★★★★★</div>
+          <p data-i18n="rev3">Nos hicieron sentir seguros y cómodos.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
