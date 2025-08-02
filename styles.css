@@ -217,7 +217,187 @@ form input:focus, form select:focus, form textarea:focus {
   padding: 1rem;
   margin-bottom: 1rem;
 }
+/* Mejoras en el header */
+header {
+  background: linear-gradient(135deg, var(--bg), rgba(106, 27, 154, 0.1));
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow);
+  transition: all var(--transition);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent-purple);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  padding: 0.5rem 1rem;
+}
+
+.logo::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-purple), var(--accent-green));
+  border-radius: 3px;
+}
+
+.menu {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.menu a {
+  color: var(--text);
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  transition: all var(--transition);
+  position: relative;
+}
+
+.menu a:hover {
+  color: var(--accent-purple);
+  background: rgba(106, 27, 154, 0.1);
+}
+
+.menu a::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--accent-purple);
+  transition: all var(--transition);
+  transform: translateX(-50%);
+}
+
+.menu a:hover::before {
+  width: 80%;
+}
+
+.toggles {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.toggles button {
+  background: var(--bg);
+  border: 2px solid var(--accent-purple);
+  color: var(--accent-purple);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  transition: all var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.toggles button:hover {
+  background: var(--accent-purple);
+  color: var(--bg);
+}
+
+.toggles select {
+  padding: 0.5rem;
+  border: 2px solid var(--accent-purple);
+  border-radius: var(--radius);
+  background: var(--bg);
+  color: var(--text);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.toggles select:hover {
+  border-color: var(--accent-green);
+}
+
+/* Agregar una sección hero */
+.hero {
+  background: linear-gradient(135deg, rgba(106, 27, 154, 0.1), rgba(46, 125, 50, 0.1));
+  padding: 4rem 0;
+  margin-top: -1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('path/to/pattern.svg');
+  opacity: 0.1;
+  animation: moveBackground 20s linear infinite;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-green));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeInUp 1s ease;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: var(--text);
+  opacity: 0.9;
+  animation: fadeInUp 1s ease 0.2s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes moveBackground {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 100%;
+  }
+}
 .stars {
   color: gold;
   margin-bottom: 0.5rem;
+
 }
