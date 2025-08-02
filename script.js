@@ -67,7 +67,7 @@ const packages = [
       es: "Recorrido por la ciudad con movilidad reducida y audioguía adaptada.",
       en: "City tour with wheelchair access and adapted audio guide."
     },
-    img: "/img/Lombardia.jpg",
+    img: "img/Lombardia.jpg",
     price: 80
   },
   {
@@ -221,4 +221,5 @@ document.addEventListener("DOMContentLoaded", () => {
   renderCards(packages, "packagesGrid", true);
   renderCards(destinations, "destinationsGrid");
   populatePackageSelect();
+
 });
