@@ -275,3 +275,99 @@ select:focus {
     padding: 6rem 1rem 3rem;
   }
 }
+
+/* Añade estas correcciones al final de tu archivo CSS */
+
+/* Ajustes para las secciones de paquetes y destinos */
+#packages,
+#destinations {
+  padding: 4rem 2rem;
+}
+
+#packages h2,
+#destinations h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+}
+
+.packages-grid,
+.destinations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.package-card,
+.destination-card {
+  background: var(--bg-primary);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.package-card:hover,
+.destination-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.package-card img,
+.destination-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.package-card-content,
+.destination-card-content {
+  padding: 1.5rem;
+}
+
+.package-card h3,
+.destination-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.package-card p,
+.destination-card p {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.package-price {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* Ajustes para el contenedor principal */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Ajustes responsive */
+@media (max-width: 768px) {
+  #packages,
+  #destinations {
+    padding: 2rem 1rem;
+  }
+  
+  .packages-grid,
+  .destinations-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .package-card img,
+  .destination-card img {
+    height: 180px;
+  }
+}
