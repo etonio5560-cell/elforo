@@ -1,197 +1,235 @@
 <!DOCTYPE html>
-<html lang="es" data-lang="es">
+<html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Turismo Inclusivo - Paquetes Especiales</title>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Poppins:wght@400;600&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turismo Inclusivo | Experiencias para Todos</title>
+    
+    <!-- Fonts: SF Pro Display (Apple's system font) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body data-theme="light">
-  <!-- HEADER -->
-  <header>
-    <div class="container">
-      <nav>
-        <div class="logo">Turismo Inclusivo</div>
-        <div class="menu">
-          <a href="#about" data-i18n="nav_about">Sobre</a>
-          <a href="#packages" data-i18n="nav_packages">Paquetes</a>
-          <a href="#destinations" data-i18n="nav_destinations">Destinos</a>
-          <a href="#booking" data-i18n="nav_booking">Reservar</a>
-          <a href="#contact" data-i18n="nav_contact">Contacto</a>
-          <a href="#reviews" data-i18n="nav_reviews">Reseñas</a>
-        </div>
-        <div class="toggles">
-          <button id="darkToggle" aria-label="Toggle Dark Mode">🌙</button>
-          <select id="langSelect" aria-label="Selector de idioma">
-            <option value="es">ES</option>
-            <option value="en">EN</option>
-          </select>
-        </div>
-      </nav>
-    </div>
-  </header>
+<body>
+    <!-- Header con navegación tipo Apple -->
+    <header class="main-header">
+        <nav class="nav-container">
+            <div class="nav-brand">
+                <a href="#" class="logo">Turismo Inclusivo</a>
+            </div>
+            
+            <div class="nav-links">
+                <a href="#experiencias">Experiencias</a>
+                <a href="#destinos">Destinos</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#sobre-nosotros">Sobre Nosotros</a>
+                <a href="#contacto">Contacto</a>
+            </div>
 
-  <main>
-    <!-- Hero Section -->
+            <div class="nav-actions">
+                <button class="btn-icon" aria-label="Cambiar tema">
+                    <svg width="20" height="20" fill="none" stroke="currentColor">
+                        <path d="M10 2v1M10 17v1M4.22 4.22l.71.71M15.07 15.07l.71.71M2 10h1M17 10h1M4.22 15.07l.71-.71M15.07 4.22l-.71.71" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <button class="btn-primary">Reservar</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section tipo Apple -->
     <section class="hero">
-      <div class="hero-content">
-        <h1>Turismo Inclusivo<br>sin Barreras</h1>
-        <p>Experiencias accesibles, memorables y seguras para todos</p>
-        <button class="btn">
-          Explorar Paquetes
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </button>
-      </div>
+        <div class="hero-content">
+            <h1>Viajes sin barreras</h1>
+            <p class="hero-subtitle">Experiencias turísticas diseñadas para todos</p>
+            <div class="hero-cta">
+                <a href="#experiencias" class="btn-primary">Explorar experiencias</a>
+                <a href="#contacto" class="btn-secondary">Contactar</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-image-container">
+                <img src="img/hero-image.jpg" alt="Grupo diverso disfrutando de un viaje" class="hero-image">
+            </div>
+        </div>
     </section>
 
-    <!-- SOBRE LA EMPRESA -->
-    <section id="about" class="about">
-      <div class="about-content">
-        <div class="about-text">
-          <h2>Sobre Nosotros</h2>
-          <p>Somos líderes en turismo inclusivo: diseñamos experiencias accesibles para personas con cualquier condición.</p>
-          <ul class="features-list">
-            <li>Vehículos adaptados</li>
-            <li>Guías capacitados</li>
-            <li>Alojamiento universal</li>
-            <li>Actividades sensoriales</li>
-          </ul>
+    <!-- Sección de Características -->
+    <section class="features" id="servicios">
+        <div class="container">
+            <h2>Servicios pensados para todos</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" fill="none" stroke="currentColor">
+                            <path d="M16 8v16M8 16h16" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>Accesibilidad Universal</h3>
+                    <p>Instalaciones y servicios adaptados para todas las necesidades</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" fill="none" stroke="currentColor">
+                            <circle cx="16" cy="16" r="12" stroke-width="2"/>
+                            <path d="M16 12v8" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>Guías Especializados</h3>
+                    <p>Personal capacitado en atención inclusiva</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" fill="none" stroke="currentColor">
+                            <rect x="4" y="8" width="24" height="16" rx="2" stroke-width="2"/>
+                            <path d="M4 12h24" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>Equipamiento Adaptado</h3>
+                    <p>Tecnología y recursos para una experiencia sin límites</p>
+                </div>
+            </div>
         </div>
-        <div class="about-image">
-          <img src="img/Discapacidad.jpg" alt="Grupo diverso de personas" style="border-radius: var(--radius-lg); width: 100%;">
-        </div>
-      </div>
     </section>
 
-    <<!-- PAQUETES -->
-<section id="packages">
-  <div class="container">
-    <h2>Nuestros Paquetes</h2>
-    <div class="packages-grid">
-      <div class="package-card">
-        <img src="img/Lombardia.jpg" alt="Tour Urbano Adaptado">
-        <div class="package-card-content">
-          <h3>Tour Urbano Adaptado</h3>
-          <p>Recorrido por la ciudad con movilidad reducida y audioguía adaptada.</p>
-          <div class="package-price">$80</div>
-        </div>
-      </div>
-      
-      <div class="package-card">
-        <img src="img/tour.sensorial.jpg" alt="Aventura Sensorial">
-        <div class="package-card-content">
-          <h3>Aventura Sensorial</h3>
-          <p>Experiencia en la naturaleza con actividades táctiles y sensoriales.</p>
-          <div class="package-price">$120</div>
-        </div>
-      </div>
-      
-      <div class="package-card">
-        <img src="img/museo.jpg" alt="Escapada Cultural">
-        <div class="package-card-content">
-          <h3>Escapada Cultural</h3>
-          <p>Visitas a museos con guías en lengua de señas.</p>
-          <div class="package-price">$100</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    <!-- Sección de Experiencias -->
+    <section class="experiences" id="experiencias">
+        <div class="container">
+            <h2>Experiencias únicas</h2>
+            <div class="experiences-grid">
+                <article class="experience-card">
+                    <div class="experience-image">
+                        <img src="img/city-tour.jpg" alt="Tour urbano accesible">
+                    </div>
+                    <div class="experience-content">
+                        <h3>Tour Urbano</h3>
+                        <p>Descubre la ciudad sin barreras</p>
+                        <div class="experience-meta">
+                            <span class="price">Desde $80</span>
+                            <a href="#" class="btn-text">Más información →</a>
+                        </div>
+                    </div>
+                </article>
 
-<!-- DESTINOS -->
-<section id="destinations">
-  <div class="container">
-    <h2>Destinos Destacados</h2>
-    <div class="destinations-grid">
-      <div class="destination-card">
-        <img src="img/playa.jpg" alt="Playa Accesible">
-        <div class="destination-card-content">
-          <h3>Playa Accesible</h3>
-          <p>Pasarelas y sillas anfibias para disfrutar del mar.</p>
+                <article class="experience-card">
+                    <div class="experience-image">
+                        <img src="img/nature.jpg" alt="Experiencia en la naturaleza">
+                    </div>
+                    <div class="experience-content">
+                        <h3>Aventura Natural</h3>
+                        <p>Conecta con la naturaleza</p>
+                        <div class="experience-meta">
+                            <span class="price">Desde $120</span>
+                            <a href="#" class="btn-text">Más información →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="experience-card">
+                    <div class="experience-image">
+                        <img src="img/cultural.jpg" alt="Experiencia cultural">
+                    </div>
+                    <div class="experience-content">
+                        <h3>Ruta Cultural</h3>
+                        <p>Arte y cultura accesible</p>
+                        <div class="experience-meta">
+                            <span class="price">Desde $95</span>
+                            <a href="#" class="btn-text">Más información →</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
         </div>
-      </div>
-      
-      <div class="destination-card">
-        <img src="img/montaña.jpg" alt="Montaña Inclusiva">
-        <div class="destination-card-content">
-          <h3>Montaña Inclusiva</h3>
-          <p>Senderos adaptados y miradores accesibles.</p>
-        </div>
-      </div>
-      
-      <div class="destination-card">
-        <img src="img/gourmet.jpg" alt="Ruta Gastronómica">
-        <div class="destination-card-content">
-          <h3>Ruta Gastronómica</h3>
-          <p>Menús en braille y menús audio-guía.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-    <!-- RESERVAR -->
-    <section id="booking">
-      <div class="container">
-        <h2 data-i18n="booking_title">Reservar Paquete</h2>
-        <form id="bookingForm" aria-label="Formulario de reserva">
-          <label for="pkgSelect" data-i18n="booking_pkg_label">Selecciona un paquete:</label>
-          <select id="pkgSelect" required></select>
-
-          <label for="date" data-i18n="booking_date_label">Fecha de viaje:</label>
-          <input type="date" id="date" required />
-
-          <label for="guests" data-i18n="booking_guests_label">Número de personas:</label>
-          <input type="number" id="guests" min="1" value="1" required />
-
-          <button type="submit" class="btn" data-i18n="booking_btn">Confirmar Reserva</button>
-        </form>
-      </div>
     </section>
 
-    <!-- CONTACTO -->
-    <section id="contact">
-      <div class="container">
-        <h2 data-i18n="contact_title">Contacto</h2>
-        <form id="contactForm" aria-label="Formulario de contacto" novalidate>
-          <input type="text" id="name" placeholder="Nombre" required />
-          <input type="email" id="email" placeholder="Email" required />
-          <textarea id="message" rows="4" placeholder="Mensaje" required></textarea>
-          <button type="submit" class="btn" data-i18n="contact_btn">Enviar</button>
-        </form>
-        <p data-i18n="contact_info">
-          Tel: +54 2622 123456 | Email: info@turismoinclusivo.com
-        </p>
-      </div>
+    <!-- Sección de Testimonios -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>Lo que dicen nuestros viajeros</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Una experiencia increíble que superó todas mis expectativas. El equipo hizo que todo fuera posible."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="img/testimonial1.jpg" alt="María García">
+                        <div class="author-info">
+                            <strong>María García</strong>
+                            <span>Viajera frecuente</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Por primera vez pude viajar sin preocupaciones. La atención a los detalles fue excepcional."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="img/testimonial2.jpg" alt="Carlos Ruiz">
+                        <div class="author-info">
+                            <strong>Carlos Ruiz</strong>
+                            <span>Aventurero</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- RESEÑAS -->
-    <section id="reviews">
-      <div class="container">
-        <h2 data-i18n="reviews_title">Reseñas</h2>
-        <div class="review">
-          <div class="stars">★★★★★</div>
-          <p data-i18n="rev1">Excelente atención y accesibilidad total.</p>
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Turismo Inclusivo</h3>
+                    <p>Haciendo el mundo accesible, un viaje a la vez.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="#experiencias">Experiencias</a></li>
+                        <li><a href="#destinos">Destinos</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li>info@turismoinclusivo.com</li>
+                        <li>+54 2622 123456</li>
+                        <li>Mendoza, Argentina</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-social">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram">
+                            <svg width="24" height="24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <svg width="24" height="24" fill="currentColor">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Turismo Inclusivo. Todos los derechos reservados.</p>
+            </div>
         </div>
-        <div class="review">
-          <div class="stars">★★★★☆</div>
-          <p data-i18n="rev2">Experiencia inolvidable, guías muy profesionales.</p>
-        </div>
-        <div class="review">
-          <div class="stars">★★★★★</div>
-          <p data-i18n="rev3">Nos hicieron sentir seguros y cómodos.</p>
-        </div>
-      </div>
-    </section>
-  </main>
+    </footer>
 
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
-
