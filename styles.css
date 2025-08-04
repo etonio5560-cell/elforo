@@ -250,3 +250,75 @@ section {
     font-size: 2.5rem;
   }
 }
+/* ========== MOUNTAIN OVERLAYS ========= */
+.mountain-overlay {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40vh;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.mountain {
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+  width: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0;
+  animation: mountainSlide 1.5s ease-out forwards;
+}
+
+.mountain-left {
+  left: 0;
+  background-image: url('img/mountain-left.png');
+  background-position: left bottom;
+  transform: translateX(-100%);
+}
+
+.mountain-right {
+  right: 0;
+  background-image: url('img/mountain-right.png');
+  background-position: right bottom;
+  transform: translateX(100%);
+}
+
+@keyframes mountainSlide {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 0.8;
+    transform: translateX(0);
+  }
+}
+
+.mountain-right {
+  animation-name: mountainSlideRight;
+}
+
+@keyframes mountainSlideRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 0.8;
+    transform: translateX(0);
+  }
+}
+
+/* Añade el gradiente de desvanecimiento */
+.mountain::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(to top, var(--secondary) 0%, transparent 100%);
+}
