@@ -14,15 +14,15 @@
 </head>
 <body>
   <!-- HEADER & NAVIGATION -->
-  <header class="glass floating">
-    <div class="container">
+  <header>
+    <div class="container flex-center">
       <div class="logo">Turismo<span>+</span></div>
       <nav>
         <ul class="nav-menu">
           <li><a href="#hero">Inicio</a></li>
           <li class="dropdown">
             <a href="#services">Servicios <i class="fas fa-chevron-down"></i></a>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu glass">
               <li><a href="#tours">Tours</a></li>
               <li><a href="#pack">Paquetes</a></li>
               <li><a href="#contact">Contacto</a></li>
@@ -31,7 +31,7 @@
           <li><a href="#about">Nosotros</a></li>
         </ul>
       </nav>
-      <button class="btn">
+      <button class="btn glass">
         <i class="fas fa-user-friends"></i>
         Reserva
       </button>
@@ -42,82 +42,58 @@
   </header>
 
   <!-- HERO SECTION -->
-  <section id="hero">
-    <div class="container hero-content glass">
-      <h1 class="text-box">Explora el mundo con confianza</h1>
-      <p class="text-box">
-        Paquetes inclusivos diseñados para que cada viaje sea inolvidable.
-      </p>
-      <button class="btn">
-        <i class="fas fa-plane"></i> Comienza tu aventura
-      </button>
+  <section id="hero" class="section-dark">
+    <div class="container">
+      <div class="hero-content glass fade-in">
+        <h1>Explora el mundo con confianza</h1>
+        <p>
+          Paquetes inclusivos diseñados para que cada viaje sea inolvidable.
+        </p>
+        <button class="btn glass">
+          <i class="fas fa-plane"></i> Comienza tu aventura
+        </button>
+      </div>
     </div>
   </section>
 
   <!-- FEATURES -->
-  <section id="services" class="container features">
-    <div class="feature glass floating">
-      <i class="fas fa-wheelchair icon"></i>
-      <h2 class="text-box">Accesibilidad Total</h2>
-      <p>
-        Rutas adaptadas, transporte seguro y alojamientos sin barreras.
-      </p>
-    </div>
-    <div class="feature glass floating">
-      <i class="fas fa-hands-helping icon"></i>
-      <h2 class="text-box">Atención Personalizada</h2>
-      <p>
-        Guías profesionales con entrenamiento inclusivo, siempre a tu lado.
-      </p>
-    </div>
-    <div class="feature glass floating">
-      <i class="fas fa-globe icon"></i>
-      <h2 class="text-box">Experiencias Únicas</h2>
-      <p>
-        Cultura local, aventura y descanso en un solo paquete diseñado para ti.
-      </p>
+  <section id="services" class="section-dark">
+    <div class="container">
+      <div class="grid">
+        <div class="feature glass fade-in">
+          <i class="fas fa-wheelchair icon"></i>
+          <h2>Accesibilidad Total</h2>
+          <p>
+            Rutas adaptadas, transporte seguro y alojamientos sin barreras.
+          </p>
+        </div>
+        <div class="feature glass fade-in">
+          <i class="fas fa-hands-helping icon"></i>
+          <h2>Atención Personalizada</h2>
+          <p>
+            Guías profesionales con entrenamiento inclusivo, siempre a tu lado.
+          </p>
+        </div>
+        <div class="feature glass fade-in">
+          <i class="fas fa-globe icon"></i>
+          <h2>Experiencias Únicas</h2>
+          <p>
+            Cultura local, aventura y descanso en un solo paquete diseñado para ti.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- GALLERY -->
-  <section id="gallery" class="gallery container">
-    <div class="glass">
-      <img src="img/tour.sensorial.jpg" alt="Paisaje" />
-    </div>
-    <div class="glass">
-      <img src="img/Lombardia.jpg" alt="Persona disfrutando" />
-    </div>
-    <div class="glass">
-      <img src="img/montaña.jpg" alt="Paisaje" />
-    </div>
-    <div class="glass">
-      <img src="img/gourmet.jpg" alt="Persona en viaje" />
+  <section id="gallery" class="gallery section-dark">
+    <div class="container">
+      <div class="grid">
+        <!-- Aquí va tu contenido de galería -->
+      </div>
     </div>
   </section>
 
-  <!-- ABOUT & CONTACT -->
-  <section id="about" class="container about glass">
-    <h2 class="text-box">Sobre Nosotros</h2>
-    <p>
-      Con más de 10 años creando viajes accesibles, combinamos profesionalismo y
-      cordialidad para ofrecerte la mejor experiencia.
-    </p>
-  </section>
-
-  <footer id="contact" class="container footer glass">
-    <div class="contact-info">
-      <h3 class="text-box">Contáctanos</h3>
-      <p>Email: info@turismoinclusivo.com</p>
-      <p>Teléfono: +54 261 123 4567</p>
-    </div>
-    <div class="social">
-      <a href="#"><i class="fab fa-facebook-f"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-    </div>
-  </footer>
-
-  <!-- Scripts -->
-  <script src="scripts.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
