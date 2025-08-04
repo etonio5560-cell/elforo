@@ -7,31 +7,26 @@
 
   <!-- Google Font & FontAwesome -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
 
   <!-- Styles -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- HEADER & NAVIGATION -->
+  <!-- HEADER -->
   <header>
-    <div class="container flex-center">
-      <div class="logo">Turismo<span>+</span></div>
+    <div class="container">
+      <a href="#" class="logo">Turismo<span>+</span></a>
       <nav>
         <ul class="nav-menu">
           <li><a href="#hero">Inicio</a></li>
-          <li class="dropdown">
-            <a href="#services">Servicios <i class="fas fa-chevron-down"></i></a>
-            <ul class="dropdown-menu glass">
-              <li><a href="#tours">Tours</a></li>
-              <li><a href="#pack">Paquetes</a></li>
-              <li><a href="#contact">Contacto</a></li>
-            </ul>
-          </li>
-          <li><a href="#about">Nosotros</a></li>
+          <li><a href="#services">Servicios</a></li>
+          <li><a href="#gallery">Destinos</a></li>
+          <li><a href="#testimonials">Opiniones</a></li>
+          <li><a href="#contact">Contacto</a></li>
         </ul>
       </nav>
-      <button class="btn glass">
+      <button class="btn">
         <i class="fas fa-user-friends"></i>
         Reserva
       </button>
@@ -41,15 +36,13 @@
     </div>
   </header>
 
-  <!-- HERO SECTION -->
-  <section id="hero" class="section-dark">
+  <!-- HERO -->
+  <section id="hero">
     <div class="container">
-      <div class="hero-content glass fade-in">
+      <div class="hero-content glass">
         <h1>Explora el mundo con confianza</h1>
-        <p>
-          Paquetes inclusivos diseñados para que cada viaje sea inolvidable.
-        </p>
-        <button class="btn glass">
+        <p>Paquetes inclusivos diseñados para que cada viaje sea inolvidable.</p>
+        <button class="btn">
           <i class="fas fa-plane"></i> Comienza tu aventura
         </button>
       </div>
@@ -60,69 +53,60 @@
   <section id="services" class="section-dark">
     <div class="container">
       <div class="grid">
-        <div class="feature glass fade-in">
+        <div class="feature glass">
           <i class="fas fa-wheelchair icon"></i>
           <h2>Accesibilidad Total</h2>
-          <p>
-            Rutas adaptadas, transporte seguro y alojamientos sin barreras.
-          </p>
+          <p>Rutas adaptadas, transporte seguro y alojamientos sin barreras.</p>
         </div>
-        <div class="feature glass fade-in">
+        <div class="feature glass">
           <i class="fas fa-hands-helping icon"></i>
           <h2>Atención Personalizada</h2>
-          <p>
-            Guías profesionales con entrenamiento inclusivo, siempre a tu lado.
-          </p>
+          <p>Guías profesionales con entrenamiento inclusivo, siempre a tu lado.</p>
         </div>
-        <div class="feature glass fade-in">
+        <div class="feature glass">
           <i class="fas fa-globe icon"></i>
           <h2>Experiencias Únicas</h2>
-          <p>
-            Cultura local, aventura y descanso en un solo paquete diseñado para ti.
-          </p>
+          <p>Cultura local, aventura y descanso en un solo paquete diseñado para ti.</p>
         </div>
       </div>
     </div>
   </section>
 
-<!-- ... (mantener el código anterior hasta la sección de features) ... -->
-
   <!-- GALLERY -->
-  <section id="gallery" class="gallery section-dark">
+  <section id="gallery" class="section-dark">
     <div class="container">
-      <h2 class="section-title">Nuestros Destinos</h2>
+      <h2>Nuestros Destinos</h2>
       <div class="gallery-grid">
-        <div class="gallery-item glass fade-in">
-          <img src="img/destino1.jpg" alt="Destino 1">
+        <div class="gallery-item glass">
+          <img src="https://picsum.photos/600/400?random=1" alt="Destino 1">
         </div>
-        <div class="gallery-item glass fade-in">
-          <img src="img/destino2.jpg" alt="Destino 2">
+        <div class="gallery-item glass">
+          <img src="https://picsum.photos/600/400?random=2" alt="Destino 2">
         </div>
-        <div class="gallery-item glass fade-in">
-          <img src="img/destino3.jpg" alt="Destino 3">
+        <div class="gallery-item glass">
+          <img src="https://picsum.photos/600/400?random=3" alt="Destino 3">
         </div>
-        <!-- Agregar más items según necesites -->
       </div>
     </div>
   </section>
 
   <!-- TESTIMONIALS -->
-  <section id="testimonials" class="testimonials section-dark">
+  <section id="testimonials" class="section-dark">
     <div class="container">
-      <h2 class="section-title">Opiniones de Viajeros</h2>
+      <h2>Opiniones de Viajeros</h2>
       <div class="grid">
-        <div class="testimonial-card glass fade-in">
-          <img src="img/testimonial1.jpg" alt="Usuario 1">
+        <div class="testimonial-card glass">
+          <img src="https://i.pravatar.cc/150?img=1" alt="Usuario 1">
           <h3>María García</h3>
           <p>"Una experiencia increíble. El equipo hizo que todo fuera accesible y cómodo."</p>
         </div>
-        <div class="testimonial-card glass fade-in">
-          <img src="img/testimonial2.jpg" alt="Usuario 2">
+        <div class="testimonial-card glass">
+          <img src="https://i.pravatar.cc/150?img=2" alt="Usuario 2">
           <h3>Juan Pérez</h3>
           <p>"Los guías son excepcionales, siempre atentos a nuestras necesidades."</p>
         </div>
-        <div class="testimonial-card glass fade-in">
-          <img src="img/testimonial3.jpg" alt="Usuario 3">
+        <div class="testimonial-card glass">
+          <img src="https://i.pravatar.cc/150?img=3" alt="Usuario 3">
           <h3>Ana Martínez</h3>
           <p>"Por fin encontré una agencia que entiende las necesidades de todos."</p>
         </div>
@@ -131,10 +115,10 @@
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="contact-section section-dark">
+  <section id="contact" class="section-dark">
     <div class="container">
-      <h2 class="section-title">Contáctanos</h2>
-      <div class="contact-form glass fade-in">
+      <h2>Contáctanos</h2>
+      <div class="contact-form glass">
         <form>
           <div class="form-group">
             <input type="text" class="form-control" placeholder="Nombre completo" required>
@@ -145,7 +129,7 @@
           <div class="form-group">
             <textarea class="form-control" rows="5" placeholder="Tu mensaje" required></textarea>
           </div>
-          <button type="submit" class="btn glass">
+          <button type="submit" class="btn">
             <i class="fas fa-paper-plane"></i> Enviar mensaje
           </button>
         </form>
