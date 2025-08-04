@@ -9,6 +9,7 @@
   --glass-border: rgba(255, 255, 255, 0.1);
   --glass-highlight: rgba(255, 255, 255, 0.05);
   --font: 'Poppins', sans-serif;
+  --header-height: 80px;
 }
 
 /* ========== GLOBAL RESET ========= */
@@ -22,106 +23,52 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
 }
 
 body {
-  background: var(--secondary);
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
   color: var(--text-main);
   font-family: var(--font);
   line-height: 1.6;
   min-height: 100vh;
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
-}
-
-/* ========== CONTENEDORES Y ALINEACIÓN ========= */
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
-
-.flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.grid {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  align-items: start;
-}
-
-/* ========== GLASSMORPHISM BASE ========= */
-.glass {
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
-  border-radius: 24px;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 var(--glass-highlight);
-  padding: 2rem;
-  margin: 1rem 0;
-  transition: all 0.3s ease;
-}
-
-.glass:hover {
-  transform: translateY(-2px);
-  box-shadow: 
-    0 12px 40px rgba(0, 0, 0, 0.4),
-    inset 0 1px 0 var(--glass-highlight);
-}
-
-/* ========== DARK SECTIONS ========= */
-.section-dark {
-  background: var(--glass-bg-dark);
-  border-radius: 32px;
-  margin: 3rem 0;
-  padding: 3rem 2rem;
-  position: relative;
-  overflow: hidden;
-}
-
-.section-dark::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    var(--glass-highlight),
-    transparent
-  );
+  padding-top: var(--header-height);
 }
 
 /* ========== HEADER & NAV ========= */
 header {
   position: fixed;
-  top: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 95%;
-  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-height);
   background: var(--glass-bg-dark);
-  border-radius: 16px;
-  padding: 1rem 2rem;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--glass-border);
+  border-bottom: 1px solid var(--glass-border);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
 }
 
 .logo {
   font-size: 1.8rem;
   font-weight: 700;
   color: var(--text-main);
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+}
+
+nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
 .nav-menu {
@@ -129,16 +76,14 @@ header {
   display: flex;
   gap: 2rem;
   align-items: center;
-  justify-content: center;
 }
 
 .nav-menu a {
-  text-decoration: none;
   color: var(--text-secondary);
-  font-weight: 500;
-  transition: all 0.2s ease;
+  text-decoration: none;
   padding: 0.5rem 1rem;
   border-radius: 8px;
+  transition: all 0.2s ease;
 }
 
 .nav-menu a:hover {
@@ -146,73 +91,92 @@ header {
   background: var(--glass-highlight);
 }
 
-/* ========== RESPONSIVE DESIGN ========= */
-@media (max-width: 768px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-  
-  header {
-    width: 100%;
-    top: 0;
-    border-radius: 0;
-  }
-  
-  .nav-menu {
-    flex-direction: column;
-    gap: 1rem;
-  }
-}
-
-/* ========== ANIMATIONS ========= */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fade-in {
-  animation: fadeIn 0.6s ease forwards;
-}
-
-/* Añadir al final del archivo styles.css existente */
-
-/* Ajuste del espaciado para el header fijo */
-body {
-  padding-top: 80px; /* Espacio para el header fijo */
-}
-
-/* Estilos para la sección de testimonios */
-.testimonials {
+/* ========== SECTIONS ========= */
+section {
   padding: 4rem 0;
+  margin: 2rem 0;
 }
 
-.testimonial-card {
+.section-dark {
+  background: var(--glass-bg-dark);
+  border-radius: 32px;
+  padding: 4rem 2rem;
+  margin: 2rem auto;
+  max-width: 1400px;
+}
+
+/* ========== HERO SECTION ========= */
+#hero {
+  padding-top: calc(var(--header-height) + 2rem);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
   text-align: center;
-  margin-bottom: 2rem;
 }
 
-.testimonial-card img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ========== FEATURES ========= */
+.feature {
+  text-align: center;
+  padding: 2rem;
+}
+
+.feature .icon {
+  font-size: 2.5rem;
   margin-bottom: 1rem;
+  color: var(--text-main);
+}
+
+/* ========== GALLERY ========= */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+  background: var(--glass-bg);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
-/* Estilos para la sección de contacto */
-.contact-section {
-  padding: 4rem 0;
+/* ========== TESTIMONIALS ========= */
+.testimonial-card {
+  text-align: center;
+  padding: 2rem;
 }
 
+.testimonial-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  border: 2px solid var(--glass-border);
+}
+
+/* ========== CONTACT FORM ========= */
 .contact-form {
   max-width: 600px;
   margin: 0 auto;
+  padding: 2rem;
 }
 
 .form-group {
@@ -221,35 +185,68 @@ body {
 
 .form-control {
   width: 100%;
-  padding: 0.75rem;
-  border-radius: 12px;
-  border: 1px solid var(--glass-border);
+  padding: 1rem;
   background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
   color: var(--text-main);
 }
 
-/* Estilos para la galería de imágenes */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1.5rem;
-  padding: 2rem 0;
+.form-control:focus {
+  outline: none;
+  border-color: var(--text-main);
 }
 
-.gallery-item {
-  position: relative;
-  overflow: hidden;
-  border-radius: 16px;
-  aspect-ratio: 16/9;
-}
-
-.gallery-item img {
+/* ========== UTILITIES ========= */
+.container {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
-.gallery-item:hover img {
-  transform: scale(1.05);
+.btn {
+  padding: 0.75rem 1.5rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  background: var(--glass-highlight);
+  transform: translateY(-2px);
+}
+
+/* ========== RESPONSIVE ========= */
+@media (max-width: 768px) {
+  :root {
+    --header-height: 60px;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    background: var(--glass-bg-dark);
+    padding: 2rem;
+    flex-direction: column;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .nav-menu.mobile-active {
+    transform: translateY(0);
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
 }
