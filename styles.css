@@ -91,6 +91,80 @@ nav {
   background: var(--glass-highlight);
 }
 
+/* ========== MOUNTAIN OVERLAYS ========= */
+.mountain-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.mountain {
+  position: absolute;
+  bottom: 0;
+  height: 70%;
+  width: 40%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0;
+  animation: mountainSlide 1.5s ease-out forwards;
+}
+
+.mountain-left {
+  left: 0;
+  background-image: url('img/mountain-left.png');
+  background-position: left bottom;
+  transform: translateX(-100%);
+  z-index: 1;
+}
+
+.mountain-right {
+  right: 0;
+  background-image: url('img/mountain-right.png');
+  background-position: right bottom;
+  transform: translateX(100%);
+  z-index: 1;
+}
+
+@keyframes mountainSlide {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 0.6;
+    transform: translateX(0);
+  }
+}
+
+.mountain-right {
+  animation-name: mountainSlideRight;
+}
+
+@keyframes mountainSlideRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 0.6;
+    transform: translateX(0);
+  }
+}
+
+.mountain::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 70%;
+  background: linear-gradient(to top, var(--secondary) 0%, transparent 100%);
+}
+
 /* ========== SECTIONS ========= */
 section {
   padding: 4rem 0;
@@ -107,13 +181,18 @@ section {
 
 /* ========== HERO SECTION ========= */
 #hero {
-  padding-top: calc(var(--header-height) + 2rem);
+  position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
+  overflow: hidden;
+  padding-top: 0;
+  margin-top: 0;
 }
 
 .hero-content {
+  position: relative;
+  z-index: 2;
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
@@ -220,10 +299,20 @@ section {
   transform: translateY(-2px);
 }
 
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
 /* ========== RESPONSIVE ========= */
 @media (max-width: 768px) {
   :root {
     --header-height: 60px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
   }
 
   .nav-menu {
@@ -236,6 +325,8 @@ section {
     flex-direction: column;
     transform: translateY(-100%);
     transition: transform 0.3s ease;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
   }
 
   .nav-menu.mobile-active {
@@ -244,81 +335,13 @@ section {
 
   .burger {
     display: block;
+    cursor: pointer;
   }
 
-  .hero-content h1 {
-    font-size: 2.5rem;
-  }
-}
-/* ========== MOUNTAIN OVERLAYS ========= */
-.mountain-overlay {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 40vh;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.mountain {
-  position: absolute;
-  bottom: 0;
-  height: 100%;
-  width: 50%;
-  background-size: contain;
-  background-repeat: no-repeat;
-  opacity: 0;
-  animation: mountainSlide 1.5s ease-out forwards;
-}
-
-.mountain-left {
-  left: 0;
-  background-image: url('img/mountain-left.png');
-  background-position: left bottom;
-  transform: translateX(-100%);
-}
-
-.mountain-right {
-  right: 0;
-  background-image: url('img/mountain-right.png');
-  background-position: right bottom;
-  transform: translateX(100%);
-}
-
-@keyframes mountainSlide {
-  0% {
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-  100% {
-    opacity: 0.8;
-    transform: translateX(0);
-  }
-}
-
-.mountain-right {
-  animation-name: mountainSlideRight;
-}
-
-@keyframes mountainSlideRight {
-  0% {
-    opacity: 0;
-    transform: translateX(100%);
-  }
-  100% {
-    opacity: 0.8;
-    transform: translateX(0);
-  }
-}
-
-/* Añade el gradiente de desvanecimiento */
-.mountain::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 50%;
-  background: linear-gradient(to top, var(--secondary) 0%, transparent 100%);
-}
+  .burger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: var(--text-main);
+    margin: 5px 0;
+    transition: all 0.3
